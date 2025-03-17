@@ -32,11 +32,11 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
           {/* Carousel Section */}
-          <div className="relative">
+          <div className="hidden sm:block relative">
             <Slider {...settings}>
               {images.map((image, index) => (
                 <div key={index}>
@@ -82,6 +82,21 @@ const About = () => {
                 gutter cleaning needs in the Lynnwood area.
               </p>
             </div>
+          </div>
+
+          {/* Small screen Image */}
+          <div className="block sm:hidden relative mt-5">
+            <Slider {...settings}>
+              {images.map((image, index) => (
+                <div key={index}>
+                  <img
+                    src={image}
+                    alt={`AGAPE Roof Cleaning Service ${index + 1}`}
+                    className="rounded-xl shadow-lg w-full h-[450px] object-cover"
+                  />
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>

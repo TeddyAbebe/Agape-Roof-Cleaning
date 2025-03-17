@@ -14,21 +14,21 @@ const services = [
     description:
       "Effective moss removal and preventative treatments using environmentally friendly solutions to protect your roof long-term.",
     image:
-      "https://i.ibb.co/5W39xk39/Whats-App-Image-2025-03-05-at-21-33-01-5.jpg",
+      "https://i.ibb.co/twPqTVyG/Whats-App-Image-2025-03-05-at-21-34-21.jpg",
   },
   {
     title: "Gutter Cleaning",
     description:
       "Complete gutter cleaning service to prevent water damage and maintain proper drainage for your home.",
     image:
-      "https://i.ibb.co/5W39xk39/Whats-App-Image-2025-03-05-at-21-33-01-5.jpg",
+      "https://i.ibb.co/kV3tvtc2/Whats-App-Image-2025-03-05-at-21-34-20-1.jpg",
   },
   {
     title: "Minor Roof Repairs",
     description:
       "Quick and reliable repairs for minor roof issues, helping extend your roof's lifespan and prevent future problems.",
     image:
-      "https://i.ibb.co/5W39xk39/Whats-App-Image-2025-03-05-at-21-33-01-5.jpg",
+      "https://i.ibb.co/xKYbzdj6/Whats-App-Image-2025-03-05-at-21-34-20.jpg",
   },
 ];
 
