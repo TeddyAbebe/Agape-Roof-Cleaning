@@ -1,37 +1,40 @@
-import React from 'react';
-
 const Hero = () => {
   return (
-    <div className="relative pt-20">
+    <div className="relative pt-20 overflow-hidden">
+      {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          className="w-full h-[600px] object-cover"
+          className="w-full h-[700px] object-cover object-center"
           src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&q=80"
-          alt="Roof cleaning"
+          alt="Professional roof cleaning in action"
         />
-        <div className="absolute inset-0 bg-gray-900 opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1F2A44]/80 to-[#1F2A44]/50"></div>
       </div>
-      
-      <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          Professional Roof Cleaning Services
+
+      {/* Content */}
+      <div className="relative max-w-7xl mx-auto py-28 px-4 sm:py-36 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
+          Expert Roof Cleaning Solutions
         </h1>
-        <p className="mt-6 text-xl text-white max-w-3xl">
-          Serving Lynnwood and surrounding areas with expert roof cleaning services. 
-          Protect your investment with our professional cleaning solutions.
+        <p className="mt-6 text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+          Serving Lynnwood and surrounding areas with top-tier roof cleaning
+          services. Protect your home with our eco-friendly, professional
+          approach.
         </p>
-        <div className="mt-10 flex flex-col sm:flex-row gap-4">
+
+        {/* Call-to-Action Buttons */}
+        <div className="mt-12 flex flex-col sm:flex-row justify-center gap-6">
           <a
             href="#contact"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-800 hover:bg-blue-700"
+            className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-[#FF69B4] rounded-lg shadow-md hover:bg-[#FF85C1] hover:shadow-lg transition-all duration-300"
           >
-            Get Free Quote
+            Get a Free Quote
           </a>
           <a
             href="tel:425-773-3101"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-800 bg-white hover:bg-gray-50"
+            className="inline-flex items-center px-8 py-4 text-lg font-semibold text-[#FF69B4] bg-white rounded-lg shadow-md hover:bg-gray-100 hover:shadow-lg transition-all duration-300"
           >
-            Call Now
+            Call Now: (425) 773-3101
           </a>
         </div>
       </div>

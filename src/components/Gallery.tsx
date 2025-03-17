@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Gallery = () => {
   const images = [
@@ -29,116 +31,103 @@ const Gallery = () => {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  useEffect(() => {
-    let interval: number;
-    if (isAutoPlaying) {
-      interval = window.setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, 5000);
-    }
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, images.length]);
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
-
-  const previousSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  // Carousel settings
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true,
+    pauseOnHover: true,
+    customPaging: (i: number) => (
+      <button
+        className="w-3 h-3 rounded-full bg-gray-400 hover:bg-[#FF69B4] transition-colors"
+        aria-label={`Go to slide ${i + 1}`}
+      />
+    ),
+    appendDots: (dots: React.ReactNode) => (
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+        <ul className="flex space-x-2">{dots}</ul>
+      </div>
+    ),
+    prevArrow: (
+      <button
+        className="slick-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all z-20 sm:left-8 lg:left-4"
+        aria-label="Previous slide"
+      >
+        <svg
+          className="w-6 h-6 text-[#1F2A44]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+    ),
+    nextArrow: (
+      <button
+        className="slick-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all z-20 sm:right-8 lg:right-4"
+        aria-label="Next slide"
+      >
+        <svg
+          className="w-6 h-6 text-[#1F2A44]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+    ),
   };
 
   return (
-    <section id="gallery" className="py-20 bg-gray-50">
+    <section id="gallery" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1F2A44] tracking-tight">
             Our Work
           </h2>
-          <p className="mt-4 text-xl text-gray-600">
+          <p className="mt-4 text-lg sm:text-xl text-gray-600 leading-relaxed">
             See the quality of our services through our recent projects
           </p>
+          <div className="mt-6 h-1 w-20 bg-[#FF69B4] rounded-full mx-auto"></div>
         </div>
 
         <div className="relative">
           {/* Main Carousel */}
-          <div className="relative h-[600px] overflow-hidden rounded-lg shadow-xl">
+          <Slider {...settings}>
             {images.map((image, index) => (
-              <div
-                key={index}
-                className={`absolute w-full h-full transition-transform duration-500 ease-in-out ${
-                  index === currentIndex ? "translate-x-0" : "translate-x-full"
-                }`}
-                style={{
-                  transform: `translateX(${100 * (index - currentIndex)}%)`,
-                }}
-              >
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-full h-full object-cover"
-                />
+              <div key={index} className="px-2">
+                <div className="relative h-[600px] rounded-xl shadow-lg overflow-hidden">
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-4 left-4 bg-[#1F2A44]/70 text-white px-4 py-2 rounded-lg text-sm">
+                    {image.alt}
+                  </div>
+                </div>
               </div>
             ))}
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={previousSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-800" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-800" />
-            </button>
-
-            {/* Slide Counter */}
-            <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
-              {currentIndex + 1} / {images.length}
-            </div>
-          </div>
-
-          {/* Thumbnails */}
-          <div className="mt-6 grid grid-cols-6 gap-4 overflow-x-auto pb-4">
-            {images.map((image, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`relative h-24 overflow-hidden rounded-lg transition-all ${
-                  currentIndex === index
-                    ? "ring-2 ring-blue-800 opacity-100"
-                    : "opacity-60 hover:opacity-100"
-                }`}
-              >
-                <img
-                  src={image.url}
-                  alt={`Thumbnail ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </button>
-            ))}
-          </div>
-
-          {/* Autoplay Toggle */}
-          <button
-            onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-            className="mt-4 px-4 py-2 bg-blue-800 text-white rounded-md hover:bg-blue-700 transition-colors"
-          >
-            {isAutoPlaying ? "Pause Slideshow" : "Play Slideshow"}
-          </button>
+          </Slider>
         </div>
       </div>
     </section>
