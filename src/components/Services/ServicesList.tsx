@@ -6,7 +6,7 @@ const services = [
     title: "Residential Roof Cleaning",
     description:
       "Professional roof cleaning with eco-friendly solutions. We ensure thorough cleaning while protecting your roof's integrity.",
-    image: "https://i.ibb.co/yFM8RFQF/Roof-Cleaning.jpg",
+    image: "https://i.ibb.co/yFM8RFQF/Roof-Clean.jpg",
   },
   {
     title: "Moss Treatment & Prevention",
