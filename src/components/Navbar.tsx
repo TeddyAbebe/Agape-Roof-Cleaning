@@ -66,6 +66,15 @@ const NavLinks = ({
       >
         Contact
       </button>
+      <Link
+        to="/portfolio"
+        onClick={onClose}
+        className={`${
+          isMobile ? "block px-4 py-2" : ""
+        } text-[#1F2A44] hover:text-[#FF69B4] font-medium transition-colors duration-200`}
+      >
+        Portfolio
+      </Link>
       <a
         href="tel:619-471-7077"
         className={`${
@@ -87,7 +96,7 @@ const NavLinks = ({
   );
 };
 
-type Section = "about" | "why-choose-us" | "gallery" | "contact";
+type Section = "about" | "why-choose-us" | "gallery" | "contact" | "portfolio";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

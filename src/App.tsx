@@ -8,6 +8,7 @@ import Gallery from "./components/Gallery";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Portfolio from "./components/Portfolio"; // Import the Portfolio component
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -31,6 +32,7 @@ function App() {
             }
           />
           <Route path="/services/*" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />{" "}
         </Routes>
         <Footer />
       </div>
