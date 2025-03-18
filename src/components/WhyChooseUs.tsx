@@ -1,10 +1,8 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CheckCircle } from "lucide-react";
 
-// Array of images for the carousel
 const images = [
   "https://i.ibb.co/zWHGPN8g/Whats-App-Image-2025-03-05-at-21-34-21-2.jpg",
   "https://i.ibb.co/Nn3Pj7fm/Whats-App-Image-2025-03-05-at-21-36-16-2.jpg",
@@ -58,17 +56,6 @@ const WhyChooseUs = () => {
     autoplaySpeed: 3000,
     arrows: true,
     pauseOnHover: true,
-    customPaging: (i: number) => (
-      <button
-        className="w-3 h-3 rounded-full bg-gray-400 hover:bg-[#FF69B4] transition-colors"
-        aria-label={`Go to slide ${i + 1}`}
-      />
-    ),
-    appendDots: (dots: React.ReactNode) => (
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-        <ul className="flex space-x-2">{dots}</ul>
-      </div>
-    ),
     prevArrow: (
       <button
         className="slick-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all z-10"

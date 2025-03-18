@@ -16,19 +16,8 @@ const About = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: true,
+    arrows: false,
     pauseOnHover: true,
-    customPaging: (i: number) => (
-      <button
-        className="w-3 h-3 rounded-full bg-gray-400 hover:bg-[#FF69B4] transition-colors"
-        aria-label={`Go to slide ${i + 1}`}
-      />
-    ),
-    appendDots: (dots: React.ReactNode) => (
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-        <ul className="flex space-x-2">{dots}</ul>
-      </div>
-    ),
   };
 
   return (

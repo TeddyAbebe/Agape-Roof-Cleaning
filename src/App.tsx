@@ -17,7 +17,6 @@ function App() {
       <div className="min-h-screen bg-white">
         <Navbar />
         <Routes>
-          {/* Home route with all components except Services */}
           <Route
             path="/"
             element={
@@ -31,8 +30,7 @@ function App() {
               </>
             }
           />
-          {/* Services route */}
-          <Route path="/services" element={<Services />} />
+          <Route path="/services/*" element={<Services />} />
         </Routes>
         <Footer />
       </div>

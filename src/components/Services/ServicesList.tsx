@@ -1,38 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ServiceCard from "./ServiceCard";
-
-const services = [
-  {
-    title: "Residential Roof Cleaning",
-    description:
-      "Professional roof cleaning with eco-friendly solutions. We ensure thorough cleaning while protecting your roof's integrity.",
-    image: "https://i.ibb.co/yFM8RFQF/Roof-Clean.jpg",
-  },
-  {
-    title: "Moss Treatment & Prevention",
-    description:
-      "Effective moss removal and preventative treatments using environmentally friendly solutions to protect your roof long-term.",
-    image: "https://i.ibb.co/278HXfm3/Moss-Cleaning-RR.jpg",
-  },
-  {
-    title: "Gutter Cleaning",
-    description:
-      "Complete gutter cleaning service to prevent water damage and maintain proper drainage for your home.",
-    image: "https://i.ibb.co/JWP9Qwyk/Gutter-Cleaning.jpg",
-  },
-  {
-    title: "Minor Roof Repairs",
-    description:
-      "Quick and reliable repairs for minor roof issues, helping extend your roof's lifespan and prevent future problems.",
-    image: "https://i.ibb.co/HDLnCgDy/Minor-Repairs.jpg",
-  },
-];
+import { services } from "./servicesData";
 
 const ServicesList: React.FC = () => {
   return (
     <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-      {services.map((service, index) => (
-        <ServiceCard key={index} {...service} />
+      {services.map((service) => (
+        <Link key={service.id} to={`/services/${service.id}`}>
+          <ServiceCard
+            title={service.title}
+            description={service.description}
+            image={service.image}
+          />
+        </Link>
       ))}
     </div>
   );
