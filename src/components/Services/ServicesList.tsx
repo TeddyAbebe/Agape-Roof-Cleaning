@@ -6,29 +6,25 @@ const services = [
     title: "Residential Roof Cleaning",
     description:
       "Professional roof cleaning with eco-friendly solutions. We ensure thorough cleaning while protecting your roof's integrity.",
-    image:
-      "https://i.ibb.co/5W39xk39/Whats-App-Image-2025-03-05-at-21-33-01-5.jpg",
+    image: "https://i.ibb.co/yFM8RFQF/Roof-Cleaning.jpg",
   },
   {
     title: "Moss Treatment & Prevention",
     description:
       "Effective moss removal and preventative treatments using environmentally friendly solutions to protect your roof long-term.",
-    image:
-      "https://i.ibb.co/twPqTVyG/Whats-App-Image-2025-03-05-at-21-34-21.jpg",
+    image: "https://i.ibb.co/278HXfm3/Moss-Cleaning-RR.jpg",
   },
   {
     title: "Gutter Cleaning",
     description:
       "Complete gutter cleaning service to prevent water damage and maintain proper drainage for your home.",
-    image:
-      "https://i.ibb.co/kV3tvtc2/Whats-App-Image-2025-03-05-at-21-34-20-1.jpg",
+    image: "https://i.ibb.co/JWP9Qwyk/Gutter-Cleaning.jpg",
   },
   {
     title: "Minor Roof Repairs",
     description:
       "Quick and reliable repairs for minor roof issues, helping extend your roof's lifespan and prevent future problems.",
-    image:
-      "https://i.ibb.co/xKYbzdj6/Whats-App-Image-2025-03-05-at-21-34-20.jpg",
+    image: "https://i.ibb.co/HDLnCgDy/Minor-Repairs.jpg",
   },
 ];
 

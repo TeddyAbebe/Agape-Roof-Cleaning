@@ -12,7 +12,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   image,
 }) => {
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg hover:border-[#FF69B4] border-b-2 border-transparent transition-all duration-300">
+    <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg hover:border-[#FF69B4] border-b-2 border-transparent transition-all duration-300 cursor-pointer">
       <div className="mb-6">
         <img
           src={image}
